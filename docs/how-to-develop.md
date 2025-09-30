@@ -66,3 +66,7 @@ These dependencies will be installed when you run `pip install -r requirements.t
 
 > [!IMPORTANT]
 > All data is stored in memory, which means data will be reset when the server restarts.
+
+## For Teachers: Requesting Changes
+
+If you're a teacher who wants to request changes to the website without writing code, see our **[Teacher Guide](teacher-guide.md)** for step-by-step instructions on using our issue templates to make requests that our coding agent can easily understand and implement.

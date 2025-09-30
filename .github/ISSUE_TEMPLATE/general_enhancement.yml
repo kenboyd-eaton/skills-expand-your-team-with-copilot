@@ -1,0 +1,132 @@
+name: 🔧 General Enhancement
+description: Request improvements or changes that don't fit other categories
+title: "[ENHANCEMENT]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a request that doesn't fit our other templates? Use this form for general improvements, documentation updates, or other enhancements.
+
+  - type: textarea
+    id: enhancement-description
+    attributes:
+      label: What improvement would you like to see?
+      description: Describe the enhancement you're requesting in simple terms
+      placeholder: "Example: Update the documentation in the src folder to match the current state of the website."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: enhancement-category
+    attributes:
+      label: What category does this fall under?
+      options:
+        - Documentation updates
+        - Performance improvements
+        - Security enhancements
+        - Code organization/cleanup
+        - Testing improvements
+        - Development tools
+        - User experience improvements
+        - Data management
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-situation
+    attributes:
+      label: What's the current situation?
+      description: Describe what exists now and why it needs to be improved
+      placeholder: "Example: The README file in the src folder is outdated and doesn't reflect the current API endpoints or functionality."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: What should be changed?
+      description: Describe your proposed solution or improvement
+      placeholder: "Example: Update the README to include all current API endpoints, proper usage examples, and accurate setup instructions."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: specific-requirements
+    attributes:
+      label: Specific requirements
+      description: What specific things need to be addressed?
+      options:
+        - label: Update documentation
+        - label: Improve code comments
+        - label: Fix inconsistencies
+        - label: Add missing information
+        - label: Remove outdated content
+        - label: Improve organization/structure
+        - label: Add examples or tutorials
+        - label: Fix broken links or references
+
+  - type: textarea
+    id: success-criteria
+    attributes:
+      label: How will we know this is successful?
+      description: What should be true when this enhancement is complete?
+      placeholder: |
+        Example:
+        - Documentation accurately reflects current functionality
+        - All API endpoints are documented with examples
+        - Setup instructions work for new developers
+        - No outdated or incorrect information remains
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority-level
+    attributes:
+      label: Priority level
+      options:
+        - High - Causes confusion or problems for users
+        - Medium - Would be helpful but not urgent
+        - Low - Nice to have improvement
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: |
+        Any other information that might be helpful:
+        - Who would benefit from this change?
+        - Are there any constraints or limitations?
+        - Related issues or dependencies?
+
+  - type: checkboxes
+    id: impact-areas
+    attributes:
+      label: What areas of the project does this affect?
+      description: Check all that apply
+      options:
+        - label: Frontend (HTML, CSS, JavaScript)
+        - label: Backend (Python API)
+        - label: Database/data structure
+        - label: Documentation
+        - label: Configuration/setup
+        - label: User interface
+        - label: Performance
+        - label: Security
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Coding Agent 🤖
+        
+        **Implementation Notes:**
+        - Identify all files that need to be updated
+        - Ensure changes are consistent throughout the project
+        - Follow existing code and documentation style
+        - Test that changes don't break existing functionality
+        - Consider impact on both teachers and students
+        - Update related files if necessary (README, docs, comments)
+        - Use simple language in documentation for non-technical users
