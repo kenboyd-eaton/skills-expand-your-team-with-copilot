@@ -1,0 +1,150 @@
+name: 🎨 Design & Styling
+description: Request changes to the website's appearance, colors, layout, or visual design
+title: "[DESIGN]: "
+labels: ["design", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Want to change how the website looks? Use this template to request visual changes, color updates, layout improvements, or design enhancements.
+
+  - type: dropdown
+    id: design-type
+    attributes:
+      label: What type of design change is this?
+      options:
+        - Color scheme/theme changes
+        - Layout improvements
+        - Typography/font changes
+        - Visual elements (images, icons, graphics)
+        - Responsive design (mobile/tablet)
+        - Animation or visual effects
+        - Branding/school identity
+        - Other visual enhancement
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-issue
+    attributes:
+      label: What's wrong with the current design?
+      description: Describe what you don't like about how the website currently looks
+      placeholder: "Example: The website uses blue colors, but our school colors are white and lime green. It doesn't represent our school properly."
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-outcome
+    attributes:
+      label: How should it look instead?
+      description: Describe your vision for the improved design
+      placeholder: "Example: Change the color scheme to use white backgrounds with lime green accents. Add our school mascot (from octodex.github.com) to the header."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: specific-changes
+    attributes:
+      label: Specific changes needed
+      description: Check all that apply
+      options:
+        - label: Change primary colors
+        - label: Change background colors
+        - label: Update fonts or text styling
+        - label: Add or change images/logos
+        - label: Improve mobile/tablet layout
+        - label: Add animations or transitions
+        - label: Update button styling
+        - label: Improve spacing and layout
+        - label: Add dark mode support
+        - label: Update navigation design
+
+  - type: textarea
+    id: color-requirements
+    attributes:
+      label: Color specifications
+      description: |
+        If this involves color changes, provide specific details:
+        - What are your school colors?
+        - Any specific color codes or preferences?
+        - Which elements should use which colors?
+      placeholder: |
+        Example:
+        School colors: White (#FFFFFF) and Lime Green (#32CD32)
+        - Header background: Lime green
+        - Main content: White background
+        - Buttons: Lime green with white text
+        - Links: Dark green (#228B22)
+
+  - type: textarea
+    id: inspiration-examples
+    attributes:
+      label: Examples or inspiration
+      description: |
+        Do you have any examples or inspiration for the design?
+        - Links to websites with similar designs
+        - Specific images or graphics to use
+        - Design trends you like
+      placeholder: "Example: Use mascot images from https://octodex.github.com/ - maybe the Octocat teacher or student versions"
+
+  - type: checkboxes
+    id: device-requirements
+    attributes:
+      label: Device compatibility
+      description: Which devices should this design work well on?
+      options:
+        - label: Desktop computers
+        - label: Laptops
+        - label: Tablets
+        - label: Mobile phones
+        - label: Large displays/projectors
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success criteria
+      description: Check what should be true when this design change is complete
+      options:
+        - label: The new design represents our school properly
+        - label: Colors match our school branding
+        - label: Design looks professional and clean
+        - label: All text remains readable and accessible
+        - label: Layout works well on all devices
+        - label: Design doesn't break existing functionality
+        - label: Students and teachers find it visually appealing
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How soon is this needed?
+      options: 
+        - ASAP - For an upcoming event or deadline
+        - Soon - Within the next few weeks
+        - Eventually - When time permits
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: |
+        Any other details that might help:
+        - Why is this design change important?
+        - Are there any limitations or requirements?
+        - Who requested this change?
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Coding Agent 🤖
+        
+        **Implementation Guidelines:**
+        - Update CSS variables in `src/static/styles.css` for color changes
+        - Ensure accessibility standards are maintained (contrast ratios, etc.)
+        - Test design on different screen sizes and devices
+        - Use only standard web technologies (HTML, CSS, JavaScript)
+        - Keep design consistent with existing UI patterns
+        - Consider performance impact of any new graphics or animations
+        - Update any hardcoded colors throughout the application
+        - Test that all interactive elements remain functional after design changes

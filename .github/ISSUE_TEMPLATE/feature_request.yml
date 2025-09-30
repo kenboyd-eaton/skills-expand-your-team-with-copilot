@@ -1,0 +1,107 @@
+name: ✨ Feature Request
+description: Request a new feature or enhancement for the website
+title: "[FEATURE]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea for improving the website? Tell us about it! The more details you provide, the better our coding agent can implement your request.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: What feature would you like to add?
+      description: Describe the new feature in simple terms
+      placeholder: "Example: Add a dark mode toggle so students can switch between light and dark themes."
+    validations:
+      required: true
+
+  - type: textarea
+    id: why-needed  
+    attributes:
+      label: Why is this feature needed?
+      description: What problem does this solve or what improvement does it provide?
+      placeholder: "Example: Students keep asking for dark mode because they find it easier on their eyes during evening study sessions."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: What type of feature is this?
+      options:
+        - New user interface element (button, menu, etc.)
+        - New page or view
+        - Filtering or search enhancement
+        - Data display improvement
+        - Navigation improvement
+        - Performance improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: detailed-requirements
+    attributes:
+      label: Detailed requirements
+      description: |
+        Provide specific details about how this feature should work:
+        - Where should it appear on the website?
+        - How should users interact with it?
+        - What should happen when they use it?
+      placeholder: |
+        Example:
+        - Add a toggle button in the top right corner of the page
+        - When clicked, it should switch between light and dark themes
+        - The choice should be remembered when the user visits again
+        - All pages should support both themes
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success criteria (how we'll know it's done)
+      description: Check all that should be true when this feature is complete
+      options:
+        - label: The feature is visible and easy to find
+        - label: The feature works on mobile devices
+        - label: The feature works in all major browsers
+        - label: Users can easily understand how to use it
+        - label: The feature doesn't break existing functionality
+        - label: The feature improves the user experience
+
+  - type: textarea
+    id: examples-inspiration
+    attributes:
+      label: Examples or inspiration
+      description: |
+        Do you have examples of similar features on other websites? 
+        Or any specific design ideas?
+      placeholder: "Example: Similar to the dark mode toggle on GitHub or Discord"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this feature?
+      options:
+        - High - Students/teachers frequently request this
+        - Medium - Would be a nice improvement
+        - Low - Just an idea for the future
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Coding Agent 🤖
+        
+        **Implementation Considerations:**
+        - Follow existing UI patterns and design system
+        - Use HTML, CSS, JavaScript, and Python only
+        - Ensure responsive design for mobile devices
+        - Consider accessibility requirements
+        - Test across different browsers
+        - Update relevant documentation if needed
+        - Keep code maintainable and well-structured

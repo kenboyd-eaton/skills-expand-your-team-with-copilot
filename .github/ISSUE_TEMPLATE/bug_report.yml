@@ -1,0 +1,90 @@
+name: 🐛 Bug Report
+description: Report a problem with the website or functionality that isn't working correctly
+title: "[BUG]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out this form completely to help our coding agent fix the issue quickly.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe what went wrong in simple terms. What were you trying to do?
+      placeholder: "Example: When I try to register a student for Chess Club, I get an error message and the student isn't added to the list."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What should have happened instead?
+      description: Describe what you expected to happen
+      placeholder: "Example: The student should be successfully registered for Chess Club and appear in the participants list."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce the problem
+      description: Tell us exactly what you did when the problem occurred
+      placeholder: |
+        Example:
+        1. Go to the activities page
+        2. Click on "Chess Club"
+        3. Enter student email: john.doe@mergington.edu
+        4. Click "Register"
+        5. Error appears: "Failed to register student"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Which browser are you using?
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional information
+      description: |
+        - Does this happen every time or just sometimes?
+        - Did this work before?
+        - Any error messages you see?
+        - Screenshots would be helpful if possible
+      placeholder: "Example: This started happening after we added new activities last week. It works fine for other activities like Drama Club."
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success criteria (what needs to be fixed)
+      description: Check all that apply
+      options:
+        - label: The error message should disappear
+        - label: Students should be able to register successfully
+        - label: The website should work the same in all browsers
+        - label: No data should be lost when the error occurs
+        - label: Teachers should see confirmation when registration succeeds
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Coding Agent 🤖
+        
+        **Implementation Hints:**
+        - Check error handling in the registration endpoints
+        - Verify database constraints and validation
+        - Look for frontend error display mechanisms
+        - Test with different browsers if needed
+        - Consider rate limiting or duplicate registration checks

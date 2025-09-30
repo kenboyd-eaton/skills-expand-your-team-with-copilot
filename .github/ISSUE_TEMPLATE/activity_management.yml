@@ -1,0 +1,130 @@
+name: 🎭 Activity Management
+description: Add, modify, or remove activities and their details
+title: "[ACTIVITY]: "
+labels: ["content", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Need to manage activities on the website? Use this template to request changes to activity data, schedules, or content.
+
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: What type of activity change do you need?
+      options:
+        - Add a new activity
+        - Modify an existing activity
+        - Remove an activity
+        - Fix activity information
+        - Bulk update multiple activities
+    validations:
+      required: true
+
+  - type: textarea
+    id: activity-details
+    attributes:
+      label: Activity details
+      description: |
+        Provide all the information about the activity:
+        - Activity name
+        - Description
+        - Schedule (days and times)
+        - Maximum participants
+        - Any special requirements or notes
+      placeholder: |
+        Example:
+        Activity: Robotics Club
+        Description: Build and program robots for competitions
+        Schedule: Tuesdays and Thursdays, 3:30 PM - 5:00 PM
+        Maximum participants: 15
+        Special notes: Requires safety goggles, provided by school
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-problem
+    attributes:
+      label: Current problem (if modifying/fixing)
+      description: If you're modifying or fixing an existing activity, what's wrong with it now?
+      placeholder: "Example: The Chess Club schedule shows Monday/Friday but it actually meets Monday/Wednesday"
+
+  - type: checkboxes
+    id: what-needs-updating
+    attributes:
+      label: What information needs to be updated?
+      description: Check all that apply (for modifications)
+      options:
+        - label: Activity name
+        - label: Description
+        - label: Schedule/meeting times
+        - label: Maximum participants limit
+        - label: Teacher/supervisor information
+        - label: Location information
+        - label: Difficulty level
+        - label: Activity category/type
+
+  - type: textarea
+    id: schedule-details
+    attributes:
+      label: Detailed schedule information
+      description: |
+        Provide specific schedule details:
+        - Which days of the week?
+        - Start and end times?
+        - Any special scheduling notes?
+      placeholder: |
+        Example:
+        Days: Monday, Wednesday, Friday
+        Time: 7:00 AM - 8:00 AM (before school)
+        Notes: No meetings during exam weeks
+
+  - type: dropdown
+    id: activity-category
+    attributes:
+      label: Activity category
+      description: What type of activity is this?
+      options:
+        - Academic (tutoring, study groups, academic clubs)
+        - Arts & Creative (art, drama, music, creative writing)
+        - Sports & Fitness (athletics, fitness, outdoor activities)
+        - Technology (programming, robotics, computer club)
+        - Special Interest (chess, manga, hobby clubs)
+        - Community Service (volunteering, service projects)
+        - Other
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success criteria
+      description: Check what should be true when this is complete
+      options:
+        - label: Activity appears correctly on the website
+        - label: Students can register for the activity
+        - label: Schedule information is accurate
+        - label: Participant limits work correctly
+        - label: Activity details are complete and clear
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional information
+      description: |
+        Any other details that might be helpful:
+        - Who is the teacher/supervisor?
+        - Are there any prerequisites?
+        - Is this a recurring activity or one-time event?
+        - Any special equipment or materials needed?
+
+  - type: markdown
+    attributes:
+      value: |
+        ## For the Coding Agent 🤖
+        
+        **Implementation Notes:**
+        - Update the `initial_activities` data in `src/backend/database.py`
+        - Ensure schedule format matches existing activities
+        - Verify schedule_details object has correct format (days array, start_time, end_time)
+        - Consider impact on existing registrations when modifying activities
+        - Test that activities display correctly in the UI
+        - Ensure filtering and search continue to work with new/modified activities
